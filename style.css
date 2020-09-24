@@ -1,0 +1,74 @@
+.navbar-brand img {
+    max-height: 100%;
+}
+
+.navbar-default.navbar {
+    border: 0;
+    background-color: white;
+    border-radius: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-nav > li > a {
+    position: relative;
+    font-size: 13px;
+}
+
+.navbar-nav > li > a.btn {
+    margin-right: 15px;
+}
+
+.navbar-nav > li > a:not(.btn)::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transition: width 0.5s, left 0.5s;
+}
+
+.navbar-nav > li > a:not(.btn):hover::after {
+    width: 100%;
+    left: 0;
+    background-color: green;
+}
+
+/* per visualizzare l'hamburger menu fino ai 992px anziché 768px */
+@media (min-width: 768px) {
+
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important; /* per sovrascrivere l'important di bootstrap */
+    }
+}
+
+@media (min-width: 992px) {
+
+    .navbar-header {
+        float: left;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-collapse.collapse {
+        display: block !important; /* per sovrascrivere l'important di bootstrap */
+    }
+}
